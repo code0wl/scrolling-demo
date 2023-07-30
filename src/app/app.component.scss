@@ -1,0 +1,38 @@
+.container {
+    margin:auto;
+    max-width: 1200px;
+    min-height: 100vh;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 200px 1fr; /* 200px for the left menu, 1fr for the rest */
+    grid-template-rows: 60px 1fr; /* 60px for the top navigation bar, 1fr for the rest */
+    grid-template-areas:
+        "top-navigation top-navigation"
+        "left-menu content";
+    min-height: 100vh;
+}
+
+.top-navigation {
+    grid-area: top-navigation;
+    background-color: #999;
+    color: #fff;
+    padding: 10px;
+}
+
+.left-menu {
+    grid-area: left-menu;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.content {
+    grid-area: content;
+    padding: 20px;
+}
+
+ .cdk-virtual-scroll-content-wrapper {
+    background: red;
+  }
+  

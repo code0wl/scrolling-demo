@@ -1,18 +1,18 @@
-<cdk-virtual-scroll-viewport [itemSize]="18 * 7" class="example-viewport">
-    <div *cdkVirtualFor="let item of items;
-                         let index = index;
-                         let count = count;
-                         let first = first;
-                         let last = last;
-                         let even = even;
-                         let odd = odd;" [class.example-alternate]="odd">
-      <div class="example-item-detail">Item: {{item}}</div>
-      <div class="example-item-detail">Index: {{index}}</div>
-      <div class="example-item-detail">Count: {{count}}</div>
-      <div class="example-item-detail">First: {{first ? 'Yes' : 'No'}}</div>
-      <div class="example-item-detail">Last: {{last ? 'Yes' : 'No'}}</div>
-      <div class="example-item-detail">Even: {{even ? 'Yes' : 'No'}}</div>
-      <div class="example-item-detail">Odd: {{odd ? 'Yes' : 'No'}}</div>
-    </div>
-  </cdk-virtual-scroll-viewport>
-  
+<cdk-virtual-scroll-viewport class="example-viewport" [itemSize]="0" [ngStyle]="{height: height + 'px'}" #container>
+  <div *cdkVirtualFor="let item of items" class="example-item">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Small</mat-card-subtitle>
+          <img loading="lazy" alt="some doge" mat-card-sm-image src="//material.angular.io/assets/img/examples/shiba2.jpg" >
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        #{{item}}
+      </mat-card-content>
+    </mat-card>
+  </div>
+</cdk-virtual-scroll-viewport>
+
+<button (click)="loadMore(this.itemSize)">Load more</button>
