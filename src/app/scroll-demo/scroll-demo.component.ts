@@ -17,7 +17,7 @@ export class ScrollDemoComponent  {
     public height = 0;
 
     // How many items to display after button clicked
-    public readonly itemSize = 40;
+    public readonly itemSize = 20;
   
     // Array to hold the items
     public items: string[] = []
